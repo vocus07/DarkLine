@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DarkLine - Wykop 2023
 @namespace      https://userstyles.world/user/vocus
-@version        2.0
+@version        2.0.1
 @description    Motyw DarkLine dla wykop.pl 2023
 @author         vocus
 @homepageURL    https://github.com/vocus07/DarkLine
@@ -13,8 +13,7 @@
 	"Blue",
 	"Brown",
 	"Charcoal*",
-	"Feminine",
-	"Twoj Wykop"
+	"Feminine"
 ]
 
 @var select ui_font "Zmień czcionkę" ["IBM Plex Sans*", "Open Sans", "Raleway", "Inter", "Nunito", "Quicksand", "Arial"]
@@ -28,7 +27,8 @@
 @var checkbox hide_ads "Ukryj boxy reklamowe (domyślnie ukryte)" 1
 @var checkbox remove_img_bg "Usuń tło obrazka w komentarzach" 1
 
-@var range home_width "Szerokość strony" [1350, 1100, 1800, 50, 'px']
+@var checkbox full_width "Pełna szerokość" 0
+@var range home_width "Własna szerokość strony" [1350, 1100, 1800, 50, 'px']
 @var range left_panel_width "Szerokość panelu z kategoriami" [250, 250, 350, 5, 'px']
 
 @var range comments_font_size "Rozmiar czcionki w komentarzach" [14, 12, 18, 1, 'px']
@@ -36,988 +36,886 @@
 @var range comment_image_size "Rozmiar obrazka w komentarzach" [300, 150, 400, 5, 'px']
 
 ==/UserStyle== */
-@-moz-document domain("wykop.pl") {
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@-moz-document domain("wykop.pl")
+    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap")
+    @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap")
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap")
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap")
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap")
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap")
+    @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap")
 
-    if (ui_theme == 'Gray') {
-        font = ui_font, sans-serif;
-        font_code = 'Anonymous Pro';
-        autor = 'DarkLine - Gray';
-        ui_font_primary = #e4e6eb;
-        ui_font_secondary = #8c8c8d;
-        ui_font_visited = #646465;
-        ui_white = #fff;
-        ui_black = #000;
-        ui_primary = #40916c;
-        ui_orange = #e36414;
-        ui_plus = #40916c;
-        ui_plus_border = rgba(64, 145, 108, 0.4);
-        ui_minus = #dc3545;
-        ui_minus_border = rgba(220, 53, 69, 0.4);
-        ui_user_green = #40916c;
-        ui_user_orange = #e36414;
-        ui_user_red = #bc4749;
-        bg_primary = #18191a;
-        bg_secondary = #222426;
-        bg_hover = #303336;
-        bg_autor = #181a1c;
-        ui_gradient_2 = t;
-    }
+    if (ui_theme == "Gray")
+        font = ui_font, sans-serif
+        font_code = "Anonymous Pro"
+        autor = "DarkLine - Gray"
+        ui_font_primary = #e4e6eb
+        ui_font_secondary = #8c8c8d
+        ui_font_visited = #646465
+        ui_white = #fff
+        ui_black = #000
+        ui_primary = #40916c
+        ui_orange = #e36414
+        ui_plus = #40916c
+        ui_plus_border = rgba(64, 145, 108, 0.4)
+        ui_minus = #dc3545
+        ui_minus_border = rgba(220, 53, 69, 0.4)
+        ui_user_green = #40916c
+        ui_user_orange = #e36414
+        ui_user_red = #bc4749
+        bg_primary = #18191a
+        bg_secondary = #222426
+        bg_hover = #303336
+        bg_autor = #181a1c
+        ui_gradient_2 = t
 
-    if (ui_theme == 'Blue') {
-        font = ui_font, sans-serif;
-        font_code = 'Anonymous Pro';
-        autor = 'DarkLine - Blue';
-        ui_font_primary = #e6e6e7;
-        ui_font_secondary = #798ea8;
-        ui_font_visited = #505d6d;
-        ui_white = #fff;
-        ui_black = #000;
-        ui_primary = #457b9d;
-        ui_orange = #e36414;
-        ui_plus = #40916c;
-        ui_plus_border = rgba(64, 145, 108, 0.4);
-        ui_minus = #dc3545;
-        ui_minus_border = rgba(220, 53, 69, 0.4);
-        ui_user_green = #40916c;
-        ui_user_orange = #e36414;
-        ui_user_red = #dc3545;
-        bg_primary = #0d1117;
-        bg_secondary = #13181f;
-        bg_hover = #21262d;
-        bg_autor = #0b0e13;
-        ui_gradient_2 = t;
-    }
+    if (ui_theme == "Blue")
+        font = ui_font, sans-serif
+        font_code = "Anonymous Pro"
+        autor = "DarkLine - Blue"
+        ui_font_primary = #e6e6e7
+        ui_font_secondary = #798ea8
+        ui_font_visited = #505d6d
+        ui_white = #fff
+        ui_black = #000
+        ui_primary = #457b9d
+        ui_orange = #e36414
+        ui_plus = #40916c
+        ui_plus_border = rgba(64, 145, 108, 0.4)
+        ui_minus = #dc3545
+        ui_minus_border = rgba(220, 53, 69, 0.4)
+        ui_user_green = #40916c
+        ui_user_orange = #e36414
+        ui_user_red = #dc3545
+        bg_primary = #0d1117
+        bg_secondary = #13181f
+        bg_hover = #21262d
+        bg_autor = #0b0e13
+        ui_gradient_2 = t
 
-    if (ui_theme == 'Brown') {
-        font = ui_font, sans-serif;
-        font_code = 'Anonymous Pro';
-        autor = 'DarkLine - Brown';
-        ui_font_primary = #f1f1f1;
-        ui_font_secondary = #a3a3a3;
-        ui_font_visited = #6d6969;
-        ui_white = #fff;
-        ui_black = #000;
-        ui_primary = #7a6c5d;
-        ui_orange = #e36414;
-        ui_plus = #40916c;
-        ui_plus_border = rgba(64, 145, 108, 0.4);
-        ui_minus = #dc3545;
-        ui_minus_border = rgba(220, 53, 69, 0.4);
-        ui_user_green = #40916c;
-        ui_user_orange = #e36414;
-        ui_user_red = #dc3545;
-        bg_primary = #181818;
-        bg_secondary = rgba(33, 33, 33, 0.98);
-        bg_hover = #3d3d3d;
-        bg_autor = #292929;
-        ui_gradient_2 = t;
-    }
+    if (ui_theme == "Brown")
+        font = ui_font, sans-serif
+        font_code = "Anonymous Pro"
+        autor = "DarkLine - Brown"
+        ui_font_primary = #f1f1f1
+        ui_font_secondary = #a3a3a3
+        ui_font_visited = #6d6969
+        ui_white = #fff
+        ui_black = #000
+        ui_primary = #7a6c5d
+        ui_orange = #e36414
+        ui_plus = #40916c
+        ui_plus_border = rgba(64, 145, 108, 0.4)
+        ui_minus = #dc3545
+        ui_minus_border = rgba(220, 53, 69, 0.4)
+        ui_user_green = #40916c
+        ui_user_orange = #e36414
+        ui_user_red = #dc3545
+        bg_primary = #181818
+        bg_secondary = rgba(33, 33, 33, 0.98)
+        bg_hover = #3d3d3d
+        bg_autor = #292929
+        ui_gradient_2 = t
 
-    if (ui_theme == 'Charcoal') {
-        font = ui_font, sans-serif;
-        font_code = 'Anonymous Pro';
-        autor = 'DarkLine - Charcoal';
-        ui_font_primary = #c6cad2;
-        ui_font_secondary = #696e77;
-        ui_font_visited = #6d7174;
-        ui_white = #fff;
-        ui_black = #000;
-        ui_primary = #D36135;
-        ui_orange = #e36414;
-        ui_plus = #40916c;
-        ui_plus_border = rgba(64, 145, 108, 0.4);
-        ui_minus = #dc3545;
-        ui_minus_border = rgba(220, 53, 69, 0.4);
-        ui_user_green = #40916c;
-        ui_user_orange = #e36414;
-        ui_user_red = #dc3545;
-        bg_primary = #272b2f;
-        bg_secondary = #2d3135;
-        bg_hover = #4d5154;
-        bg_autor = #292929;
-        ui_gradient_2 = t;
-    }
+    if (ui_theme == "Charcoal")
+        font = ui_font, sans-serif
+        font_code = "Anonymous Pro"
+        autor = "DarkLine - Charcoal"
+        ui_font_primary = #c6cad2
+        ui_font_secondary = #696e77
+        ui_font_visited = #6d7174
+        ui_white = #fff
+        ui_black = #000
+        ui_primary = #D36135
+        ui_orange = #e36414
+        ui_plus = #40916c
+        ui_plus_border = rgba(64, 145, 108, 0.4)
+        ui_minus = #dc3545
+        ui_minus_border = rgba(220, 53, 69, 0.4)
+        ui_user_green = #40916c
+        ui_user_orange = #e36414
+        ui_user_red = #dc3545
+        bg_primary = #272b2f
+        bg_secondary = #2d3135
+        bg_hover = #4d5154
+        bg_autor = #292929
+        ui_gradient_2 = t
 
-    if (ui_theme == 'Feminine') {
-        font = ui_font, sans-serif;
-        font_code = 'Anonymous Pro';
-        autor = 'DarkLine - Feminine';
-        ui_font_primary = #ced0d4;
-        ui_font_secondary = #aeb0b4;
-        ui_font_visited = #6d7174;
-        ui_white = #fff;
-        ui_black = #000;
-        ui_primary = #BC3C7A;
-        ui_orange = #e36414;
-        ui_plus = #40916c;
-        ui_plus_border = rgba(64, 145, 108, 0.4);
-        ui_minus = #dc3545;
-        ui_minus_border = rgba(220, 53, 69, 0.4);
-        ui_user_green = #40916c;
-        ui_user_orange = #e36414;
-        ui_user_red = #dc3545;
-        bg_primary = #101214;
-        bg_secondary = #15171a;
-        bg_hover = #292e32;
-        bg_autor = #292929;
-        ui_gradient_2 = t;
-    }
+    if (ui_theme == "Feminine")
+        font = ui_font, sans-serif
+        font_code = "Anonymous Pro"
+        autor = "DarkLine - Feminine"
+        ui_font_primary = #ced0d4
+        ui_font_secondary = #aeb0b4
+        ui_font_visited = #6d7174
+        ui_white = #fff
+        ui_black = #000
+        ui_primary = #BC3C7A
+        ui_orange = #e36414
+        ui_plus = #40916c
+        ui_plus_border = rgba(64, 145, 108, 0.4)
+        ui_minus = #dc3545
+        ui_minus_border = rgba(220, 53, 69, 0.4)
+        ui_user_green = #40916c
+        ui_user_orange = #e36414
+        ui_user_red = #dc3545
+        bg_primary = #101214
+        bg_secondary = #15171a
+        bg_hover = #292e32
+        bg_autor = #292929
+        ui_gradient_2 = t
 
-    t = transparent;
-    i = !important;
-    n = none;
-    b = block;
-
-    @supports (color-scheme: dark) {
-        color-scheme: dark;
-    }
+    t = transparent
+    i = !important
+    n = none
+    b = block
 
     // Wykop default colors
-    :root [data-night-mode] {
-        --porcelain: bg_primary;
-        --geyser: bg_secondary;
-        --whitish: bg_secondary;
-        --squeeze: bg_hover;
-        --athensGray: ui_primary;
-        --cinnabar: ui_primary;
-        --orange: ui_primary;
-        --tuna: ui_font_primary;
-        --steelBluish: ui_font_primary;
-        --heather: ui_font_secondary;
-        --gullGray: ui_font_secondary;
-    }
-
-    if (hide_wosp) {
-        [data-night-mode] aside.doodle > * img {
-            display: n i;
-        }
-    }
-
-    if (hide_voters) {
-        [data-night-mode] section.entry-voters {
-            display: n i;
-        }
-    }
-
-    if (hide_news) {
-        [data-night-mode] aside.hits-slider {
-            display: n i;
-        }
-    }
-
-    if (hide_categories) {
-        [data-night-mode] aside.left-panel > section.links > .content ul.categories li {
-            display: n i;
-        }
-    }
-
-    if (comments_padding) {
-        [data-night-mode] section.entry > .comments {
-            padding: 10px 0 0 comments_padding;
-        }
-    }
-
-    if (comments_font_size) {
-        [data-night-mode] section.entry-content {
-            font-size: comments_font_size;
-        }
-    }
-
-    if (push_image_right) {
-        [data-night-mode] section.home-page section.link-block > section > article, [data-night-mode] section.upcoming-page section.link-block > section > article {
-            padding: 24px 260px 25px 0 i;
-        }
-
-        [data-night-mode] section.home-page section.link-block > section > article figure, [data-night-mode] section.upcoming-page section.link-block > section > article figure {
-            right: 16px i;
-            left: inherit i;
-        }
-    }
-
-    if (comments_font_size) {
-        [data-night-mode] main.main[data-theme='default'] > section, [data-night-mode] main.main[data-theme='default'] > aside.wide-top {
-            max-width: home_width;
-        }
-    }
-
-    if (left_panel_width) {
-        [data-night-mode] aside.left-panel {
-            width: left_panel_width;
-            top: calc74px + 6px;
-            box-shadow: n;
-            -webkit-box-shadow: n;
-        }
-    }
-
-    if (hide_ads) {
-        html body section.pub-slot-wrapper > *, html body section.pub-slot-wrapper[class*='sponsored'], html body section.pub-slot-wrapper[class*='market'], html body section.pub-slot-wrapper.top, html body section.pub-slot-wrapper.sidebar-1, html body section.pub-slot-wrapper {
-            display: n i;
-        }
-    }
-
-    if (hide_corners) {
-        aside, section, button, .button, ul, li, a, span, div, p, img, input, :before, :after {
-            border-radius: 0 i;
-        }
-    }
-
-    if (comment_image_size) {
-        [data-night-mode] section.entry-photo figure {
-            max-width: comment_image_size;
-        }
-    }
-
-    if (remove_img_bg) {
-        [data-night-mode] section.entry-photo figure, [data-night-mode] section.entry-photo figure figcaption {
-            border: none i;
-            background: t i;
-            padding: 0 i;
-            display: none;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) i;
-        }
-    }
-
-    [data-night-mode] aside.doodle > * img {
-        display: b;
-    }
-
-    [data-night-mode] section.entry-voters {
-        display: b;
-    }
-
-    [data-night-mode] aside.hits-slider {
-        display: b;
-    }
-
-    [data-night-mode] aside.left-panel > section.links > .content ul.categories li {
-        display: b;
-    }
-
-    [data-night-mode] section.home-page section.link-block > section > article, [data-night-mode] section.upcoming-page section.link-block > section > article {
-        padding: 24px 10px 25px 260px;
-    }
-
-    [data-night-mode] section.home-page section.link-block > section > article figure, [data-night-mode] section.upcoming-page section.link-block > section > article figure {
-        right: inherit;
-        left: 16px;
-    }
-
-    aside, section, button, .button, ul, li, a, span, div, p, img, .img, input, :before, :after {
-        border-radius: inherit;
-    }
-
-    [data-night-mode] aside.left-panel > .popper-button.buckets.active button:before {
-        background: bg_hover;
-    }
-
-    html body section.pub-slot-wrapper > *, html body section.pub-slot-wrapper[class*='sponsored'], html body section.pub-slot-wrapper[class*='market'], html body section.pub-slot-wrapper.top, html body section.pub-slot-wrapper.sidebar-1, html body section.pub-slot-wrapper {
-        display: b;
-    }
-
-    html {
-        text-rendering: optimizeLegibility i;
-        -webkit-font-smoothing: subpixel-antialiased i;
-        -moz-osx-font-smoothing: grayscale i;
-    }
-
-    body {
-        font-family: font i;
-    }
-
-    input, button, select, textarea {
-        font-family: font i;
-    }
-
-    [data-night-mode] .burgundy-profile {
-        color: ui_user_red i;
-    }
-
-    [data-night-mode] .orange-profile {
-        color: ui_user_orange i;
-    }
-
-    [data-night-mode] .green-profile {
-        color: ui_user_green i;
-    }
-
-    [data-night-mode] section.entry > article > header > div.right > div a.username {
-        font-weight: 600;
-        font-size: 14px i;
-    }
-
-    [data-night-mode] .header {
-        position: sticky i;
-        color: bg_secondary i;
-        height: 60px i;
-        box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.5);
-    }
-
-    [data-night-mode] header.header > .left > a.logotype, [data-night-mode] header.header > .left > a.logo {
-        background: ui_primary i;
-    }
-
-    [data-night-mode] header.header {
-        position: relative;
-    }
-
-    [data-night-mode] header.header:after {
-        content: autor;
-        position: absolute;
-        color: ui_font_primary;
-        top: 44px;
-        left: 113px;
-        font-size: 8px;
-        font-weight: 500;
-    }
-
-    [data-night-mode] header.header > .left > nav.main > ul li a + strong {
-        background: ui_primary i;
-        box-shadow: n i;
-    }
-
-    [data-night-mode] header.header > .left > nav.main > ul li.active a {
-        background: t i;
-        border-bottom: 2px solid ui_primary;
-        border-radius: 0;
-    }
-
-    [data-night-mode] header.header > .left > nav.main > ul li:hover a {
-        background-color: bg_hover i;
-    }
-
-    [data-night-mode] header.header > .left > button {
-        background: bg_hover i;
-    }
-
-    [data-night-mode] body > section.open-left-panel:not(.is-mobile) main.main {
-        max-width: calc(100% - 300px - 6px);
-    }
-
-    [data-night-mode] main.main[data-theme='default'] > section > .content {
-        width: calc(100% - 350px - 20px);
-    }
-
-    [data-night-mode] section.sidebar {
-        width: 350px i;
-    }
-
-    [data-night-mode] main.main > section {
-        margin: 0 auto 0 auto i;
-    }
-
-    [data-night-mode] section.sidebar > * + * {
-        margin-top: 0px i;
-        margin-bottom: 10px;
-    }
-
-    [data-night-mode] aside.left-panel, [data-night-mode] section.sidebar, [data-night-mode] section.link-page, [data-night-mode] section.messages-page, [data-night-mode] section.bucket-create-page, [data-night-mode] section.bucket-page, [data-night-mode] section.search-page, [data-night-mode] section.article {
-        margin-top: 20px;
-    }
-
-    [data-night-mode] main.main[data-theme='default'] > aside.wide-top {
-        margin: 20px auto 20px auto;
-    }
-
-    [data-night-mode] header.stream-top {
-        padding: 20px 0 0 i;
-    }
-
-    [data-night-mode] aside.left-panel > section.links > .content ul li.active a:before {
-        background: ui_white i;
-    }
-
-    [data-night-mode] aside.left-panel > section.links > .content ul li.active a > span {
-        background: bg_hover i;
-        font-weight: 500 i;
-        color: ui_white i;
-    }
-
-    [data-night-mode] aside.left-panel > section.links > .content ul li i {
-        background: ui_font_primary i;
-    }
-
-    [data-night-mode] aside.left-panel > section.links > .content ul li:hover:not(.active) a > span {
-        background: bg_hover i;
-    }
-
-    [data-night-mode] section.search-input form > label {
-        background: ui_font_primary i;
-    }
-
-    [data-night-mode] section.search-input form > input[type='search'] {
-        color: ui_font_primary i;
-        background: bg_hover i;
-        border: 1px solid bg_hover i;
-    }
-
-    [data-night-mode] section.search-input form > input[type='search']::placeholder {
-        color: ui_font_primary i;
-        font-size: 13px;
-        font-weight: 600 i;
-    }
-
-    [data-night-mode] section.bucket-editor .form-element input {
-        background: bg_hover i;
-        border: 1px solid bg_hover i;
-    }
-
-    [data-night-mode] section.link-block.detailed:hover {
-        -webkit-box-shadow: 0 0 0 2px rgba(ui_primary, 0.4) i;
-        box-shadow: 0 0 0 2px rgba(ui_primary, 0.4) i;
-    }
-
-    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn > button {
-        background: bg_hover i;
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] aside.left-panel > section.links > .content ul li a:before {
-        background: ui_font_primary i;
-    }
-
-    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn.icon > button:before {
-        background: ui_font_primary i;
-    }
-
-    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn.icon > button:hover:before {
-        background: ui_font_primary i;
-    }
-
-    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn > button:hover {
-        background: ui_primary i;
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] aside.left-panel > section.buttons > .content ul li a:after {
-        background: ui_primary i;
-    }
-
-    [data-night-mode] section.link:before, [data-night-mode] section.entry:before {
-        background: bg_hover i;
-    }
-
-    [data-night-mode] section.vote-box .dig button, [data-night-mode] section.vote-box .dig p {
-        background: ui_primary i;
-        font-weight: 700;
-    }
-
-    [data-night-mode] section.vote-box .dig p span {
-        background: bg_secondary i;
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] section.vote-box .dig p + button {
-        margin-top: 10px;
-    }
-
-    [data-night-mode] section.vote-box.hot .dig p:before {
-        background: ui_minus;
-    }
-
-    [data-night-mode] span.adult-ribbon {
-        font-size: 11px i;
-        font-weight: 700 i;
-        padding: 0 4px i;
-        border-radius: 5px i;
-    }
-
-    [data-night-mode] section.link-block > section > article > header h2 a:visited, [data-night-mode] section.link-block > section > article section.info > p a:visited {
-        color: ui_font_visited i;
-    }
-
-    [data-night-mode] section.link-block > section > article > header h2 {
-        font-size: 18px i;
-        font-weight: 600 i;
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] section.link-block > section > article > header h2 a {
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] section.link-block > section > article section.info > p {
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] section.entry-content .wrapper blockquote {
-        color: ui_font_secondary i;
-        background: bg_primary i;
-    }
-
-    [data-night-mode] section.entry.reply {
-        border-left: 2px solid bg_hover;
-        border-radius: 0;
-        box-shadow: n;
-        background: t;
-    }
-
-    [data-night-mode] section.entry.reply:nth-child(odd) {
-        background: t i;
-    }
-
-    [data-night-mode] section.entry.author, [data-night-mode] section.entry.author:nth-child(odd) {
-        background: t i;
-        border-left: 2px solid rgba(ui_primary, 0.3);
-    }
-
-    [data-night-mode] section.entry.link-author.own, [data-night-mode] section.entry.link-author.own:nth-child(odd) {
-        border-left: 2px solid rgba(ui_primary, 1);
-        background: linear-gradient(90deg, rgba(ui_primary, 0.07) 0%, ui_gradient_2 30%) i;
-        box-shadow: 0px 10px 15px -8px rgba(0, 0, 0, 0.6) i;
-    }
-
-    [data-night-mode] #link-comments-stream .content section.entry > article, [data-night-mode] #link-comments-stream .content section.entry #link-comments .entry, [data-night-mode] .content section.entry > article {
-        padding-top: 12px i;
-        padding-bottom: 12px i;
-    }
-
-    [data-night-mode] #link-comments-stream section.stream > .content > * + * {
-        margin-top: 10px;
-    }
-
-    [data-night-mode] section.entry-content .wrapper a {
-        color: ui_primary i;
-        font-weight: 400;
-    }
-
-    [data-night-mode] section.entry > article:hover {
-        background: t i;
-    }
-
-    [data-night-mode] section.rating-box .buttons button.plus, [data-night-mode] section.related-rating-box button.plus {
-        border: 2px solid ui_plus_border i;
-    }
-
-    [data-night-mode] section.rating-box .buttons button.minus, [data-night-mode] section.related-rating-box button.minus {
-        border: 2px solid ui_minus_border i;
-    }
-
-    [data-night-mode] section.related-rating-box button.minus.voted {
-        background: rgba(ui_minus, 0.4) i;
-    }
-
-    [data-night-mode] section.rating-box .buttons button.plus:after, [data-night-mode] section.related-rating-box button.plus:after {
-        background: ui_plus i;
-    }
-
-    [data-night-mode] section.rating-box .buttons button.minus:after, [data-night-mode] section.related-rating-box button.minus:after {
-        background: ui_minus i;
-    }
-
-    [data-night-mode] section.rating-box .buttons button.plus.voted {
-        background: rgba(ui_plus, 0.4) i;
-    }
-
-    [data-night-mode] section.rating-box > ul li, [data-night-mode] section.related-rating-box > ul li {
-        color: ui_minus i;
-    }
-
-    [data-night-mode] section.rating-box > ul li.separated.zero {
-        color: ui_plus i;
-    }
-
-    [data-night-mode] section.rating-box>ul li.zero:not(separated) {
-        color: ui_font_primary i;
-    }
-
-    [data-night-mode] section.rating-box > ul li.minus {
-        color: ui_minus i;
-    }
-
-    [data-night-mode] section.rating-box > ul li.plus, [data-night-mode] section.related-rating-box > ul li.plus {
-        color: ui_plus i;
-    }
-
-    [data-night-mode] .v--modal-overlay {
-        background: rgba(0, 0, 0, 0.8);
-    }
-
-    [data-night-mode] section.rating-box > ul li + li, [data-night-mode] section.rating-box > ul + .buttons {
-        margin-left: 10px i;
-    }
-
-    [data-night-mode] section.link-block > section > article section.info > span:after, [data-night-mode] header.static-top.article>div:after {
-        display: n i;
-    }
-
-    [data-night-mode] section.entry-content .wrapper button {
-        padding: 5px 8px i;
-    }
-
-    [data-night-mode] section.entry-content .wrapper button.more {
-        display: flex;
-        margin: 8px 0 0 i;
-        font-size: 12px i;
-    }
-
-    [data-night-mode] section.entry-content .wrapper button {
-        background: t i;
-        color: ui_font_primary i;
-        border-bottom: 2px solid ui_primary;
-        font-size: 10px i;
-        font-weight: 700 i;
-        border-radius: 0;
-        padding: 4px 4px i;
-    }
-
-    [data-night-mode] section.message > article.me > div.content {
-        background: bg_primary i;
-        border: 0px solid t i;
-    }
-
-    [data-night-mode] section.message > article > div.content {
-        background: bg_hover;
-    }
-
-    [data-night-mode] aside.hint-box {
-        background: #16393a i;
-    }
-
-    [data-night-mode] aside.hint-box > header h3, [data-night-mode] aside.hint-box > .content p {
-        color: #1ee0ac i;
-    }
-
-    [data-night-mode] div.button.inactive .target {
-        background: ui_primary;
-    }
-
-    [data-night-mode] .v--modal-box, [data-night-mode] section.modal > footer {
-        background: bg_secondary i;
-    }
-
-    [data-night-mode] .cool-lightbox {
-        background-color: rgba(30, 30, 30, 0.9) i;
-    }
-
-    [data-night-mode] .cool-lightbox .cool-lightbox-toolbar {
-        top: 30px;
-        right: 20px;
-    }
-
-    [data-night-mode] .cool-lightbox .cool-lightbox-toolbar .cool-lightbox-toolbar__btn > * {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    }
-
-    [data-night-mode] button.cool-lightbox-toolbar__btn > span {
-        background: ui_primary i;
-    }
-
-    [data-night-mode] .cool-lightbox .cool-lightbox__slide img {
-        box-shadow: n i;
-    }
-
-    [data-night-mode] input {
-        font-family: font i;
-        color: ui_font_primary i;
-        background: bg_hover i;
-        border: 1px solid #2a3037 i;
-        height: 45px i;
-    }
-
-    [data-night-mode] section.entry.author:before, [data-night-mode] section.entry.link-author:before, [data-night-mode] section.entry.own:before {
-        background: t i;
-        width: 0;
-        height: 0;
-    }
-
-    [data-night-mode] section.link > figure {
-        width: 50px;
-        height: 50px;
-        flex: 0 0 50px;
-    }
-
-    [data-night-mode] section.entry-photo figure, [data-night-mode] section.entry-photo figure figcaption {
-        border: n i;
-        background: bg_hover i;
-        padding: 10px 10px 30px 10px;
-        box-shadow: none;
-    }
-
-    [data-night-mode] div.button.outline .target {
-        color: ui_font_primary;
-        border: 0px solid t i;
-        font-weight: 700;
-    }
-
-    [data-night-mode] div.button.outline .target:hover {
-        background: ui_primary i;
-        color: ui_white i;
-        border: n i;
-    }
-
-    [data-night-mode] section.entry > .comments + section.editor {
-        margin: 30px 0 9px 9px;
-    }
-
-    [data-night-mode] section.editor.inner {
-        border: n i;
-        box-shadow: n i;
-        background: bg_primary i;
-    }
-
-    [data-night-mode] section.editor > .content textarea {
-        background: t i;
-        color: ui_font_primary;
-        font-size: 16px;
-    }
-
-    [data-night-mode] section.editor:focus-within:not(.inner):not(.message) {
-        border: 1px solid bg_hover i;
-        box-shadow: n i;
-    }
-
-    [data-night-mode] .switch input:checked + label strong i:nth-child(1) {
-        background: ui_primary i;
-    }
-
-    [data-night-mode] li.account > a > a {
-        border: 2px solid ui_primary;
-    }
-
-    [data-night-mode] header.header > .right > nav > ul > li.dropdown > a .svg-inline svg {
-        fill: ui_font_primary;
-    }
-
-    [data-night-mode] li > section section.notifications.empty section.no-items, [data-night-mode] li > section section.stream > .content > section {
-        background: bg_secondary i;
-        opacity: 1 i;
-    }
-
-    [data-night-mode] li.account > ul > li:hover a {
-        background: bg_hover i;
-    }
-
-    [data-night-mode] aside.left-panel > section.buttons > .content ul li a:before {
-        border: 1px solid bg_hover;
-    }
-
-    [data-night-mode] ul.tab-nav {
-        padding: 20px 2px 5px i;
-    }
-
-    [data-night-mode] ul.tab-nav > li.active a {
-        color: ui_primary i;
-    }
-
-    [data-night-mode] ul.tab-nav > li.active a:after {
-        background: ui_primary i;
-    }
-
-    [data-night-mode] header.header > .right > nav > ul > li.dropdown > ul, [data-night-mode] header.header > .right > nav > ul > li.dropdown > section {
-        background: bg_secondary i;
-    }
-
-    [data-night-mode] aside.profile-top > section > figure {
-        background: bg_secondary i;
-    }
-
-    [data-night-mode] figure.badge-icon {
-        background-color: ui_primary i;
-    }
-
-    [data-night-mode] article.link-article > footer:before {
-        background-image: n i;
-    }
-
-    [data-night-mode] section.actions > ul > li.reply {
-        font-weight: 600;
-    }
-
-    [data-night-mode] section.survey {
-        border: n i;
-        background: bg_primary i;
-    }
-
-    [data-night-mode] section.survey > .content:before, [data-night-mode] section.survey > .content:after {
-        background: bg_hover i;
-        height: 0 i;
-    }
-
-    [data-night-mode] section.survey > .content ul li.voted i {
-        border: 1px solid ui_primary i;
-        background: ui_primary i;
-    }
-
-    [data-night-mode] section.survey > .content ul li i[data-v-a619d144] {
-        border: 1px solid bg_secondary i;
-        background: bg_secondary;
-    }
-
-    [data-night-mode] div.button .target {
-        color: ui_font_primary;
-        background: bg_hover i;
-    }
-
-    div.button .target:hover {
-        background: ui_primary i;
-    }
-
-    [data-night-mode] strong.upcoming-count:before {
-        display: n;
-    }
-
-    [data-night-mode] strong.upcoming-count:after {
-        color: bg_secondary;
-        font-weight: 600;
-    }
-
-    [data-night-mode] section.new-entry[data-v-5c93cb4f] .button .target {
-        box-shadow: n i;
-    }
-
-    [data-night-mode] section.survey > .content ul li:hover {
-        border-color: rgba(64, 145, 108, 0.5) i;
-    }
-
-    [data-night-mode] section.survey > .content ul li i:before {
-        width: 15px;
-        height: 15px;
-        border: 2px solid ui_primary;
-    }
-
-    [data-night-mode] section.survey > .content ul li i:after {
-        left: 15px;
-        width: 7px;
-        height: 7px;
-        background: ui_primary;
-    }
-
-    [data-night-mode] section.entry-content .wrapper code {
-        border: n i;
-        font-family: font_code;
-        font-weight: 400 i;
-        letter-spacing: 0.4px i;
-        display: inline-block i;
-        padding: 6px 15px i;
-        background: bg_primary i;
-        line-height: 1.7 i;
-    }
-
-    [data-night-mode] section.embed-ghost figure {
-        height: 240px;
-    }
-
-    [data-night-mode] section.embed-ghost figure:after {
-        background: rgba(bg_primary, 0.5) i;
-    }
-
-    [data-night-mode] section.embed-ghost figure .svg-inline svg, [data-night-mode] section.link-block>section>article figure.embed .svg-inline svg {
-        fill: ui_primary;
-        filter: n;
-    }
-
-    [data-night-mode] section.entry-photo figure>span:before {
-        border: 2px solid t;
-        background: ui_primary;
-        box-shadow: n;
-        opacity: 0.9;
-        color: ui_font_primary;
-    }
-
-    [data-night-mode] section.search-results-dropdown {
-        background: bg_secondary i;
-        box-shadow: 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2) i;
-    }
-
-    [data-night-mode] section.search-results-dropdown section.stream > .content > section article header {
-        background-color: ui_primary i;
-    }
-
-    [data-night-mode] section.search-results-dropdown section.stream > .content > section article header h3 {
-        color: ui_white i;
-    }
-
-    [data-night-mode] section.search-results-dropdown section.stream > .content > footer a:not(.active-select) {
-        background-color: bg_secondary i;
-    }
+    :root [data-night-mode]
+        --porcelain bg_primary
+        --geyser bg_secondary
+        --whitish bg_secondary
+        --squeeze bg_hover
+        --athensGray ui_primary
+        --cinnabar ui_primary
+        --orange ui_primary
+        --tuna ui_font_primary
+        --steelBluish ui_font_primary
+        --heather ui_font_secondary
+        --gullGray ui_font_secondary
+
+    if (hide_wosp)
+        [data-night-mode] aside.doodle > * img
+            display n i
+
+    if (hide_voters)
+        [data-night-mode] section.entry-voters
+            display n i
+
+    if (hide_news)
+        [data-night-mode] aside.hits-slider
+            display n i
+
+    if (hide_categories)
+        [data-night-mode] aside.left-panel > section.links > .content ul.categories li
+            display n i
+
+    if (comments_padding)
+        [data-night-mode] section.entry > .comments
+            padding 10px 0 0 comments_padding
+
+    if (comments_font_size)
+        [data-night-mode] section.entry-content
+            font-size comments_font_size
+
+    if (push_image_right)
+        [data-night-mode] section.home-page section.link-block > section > article
+        [data-night-mode] section.upcoming-page section.link-block > section > article
+            padding 24px 260px 25px 0 i
+
+        [data-night-mode] section.home-page section.link-block > section > article figure
+        [data-night-mode] section.upcoming-page section.link-block > section > article figure
+            right 16px i
+            left inherit i
+
+    if (home_width)
+        [data-night-mode] main.main[data-theme="default"] > section
+        [data-night-mode] main.main[data-theme="default"] > aside.wide-top
+            max-width home_width
+
+    if (full_width)
+        [data-night-mode] main.main[data-theme="default"] > section
+        [data-night-mode] main.main[data-theme="default"] > aside.wide-top
+            max-width 100% i
+
+    if (left_panel_width)
+        [data-night-mode] aside.left-panel
+            width left_panel_width
+            top: calc74px + 6px
+            box-shadow n
+            -webkit-box-shadow n
+
+    if (hide_ads)
+        html body section.pub-slot-wrapper > *
+        html body section.pub-slot-wrapper[class*="sponsored"]
+        html body section.pub-slot-wrapper[class*="market"]
+        html body section.pub-slot-wrapper.top
+        html body section.pub-slot-wrapper.sidebar-1
+        html body section.pub-slot-wrapper
+            display n i
+
+    if (hide_corners)
+        aside
+        section
+        button
+        .button
+        ul
+        li
+        a
+        span
+        div
+        p
+        img
+        input
+        :before
+        :after
+            border-radius 0 i
+
+    if (comment_image_size)
+        [data-night-mode] section.entry-photo figure
+            max-width comment_image_size
+
+    if (remove_img_bg)
+        [data-night-mode] section.entry-photo figure
+        [data-night-mode] section.entry-photo figure figcaption
+            border none i
+            background t i
+            padding 0 i
+            display none
+            box-shadow 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) i
+
+    [data-night-mode] aside.doodle > * img
+        display b
+
+    [data-night-mode] section.entry-voters
+        display b
+
+    [data-night-mode] aside.hits-slider
+        display b
+
+    [data-night-mode] aside.left-panel > section.links > .content ul.categories li
+        display b
+
+    [data-night-mode] section.home-page section.link-block > section > article
+    [data-night-mode] section.upcoming-page section.link-block > section > article
+        padding 24px 10px 25px 260px
+
+    [data-night-mode] section.home-page section.link-block > section > article figure
+    [data-night-mode] section.upcoming-page section.link-block > section > article figure
+        right inherit
+        left 16px
+
+    aside
+    section
+    button
+    .button
+    ul
+    li
+    a
+    span
+    div
+    p
+    img
+    .img
+    input
+    :before
+    :after
+        border-radius inherit
+
+    [data-night-mode] aside.left-panel > .popper-button.buckets.active button:before
+        background bg_hover
+
+    html body section.pub-slot-wrapper > *
+    html body section.pub-slot-wrapper[class*="sponsored"]
+    html body section.pub-slot-wrapper[class*="market"]
+    html body section.pub-slot-wrapper.top
+    html body section.pub-slot-wrapper.sidebar-1
+    html body section.pub-slot-wrapper
+        display b
+
+    html
+        text-rendering optimizeLegibility i
+        -webkit-font-smoothing subpixel-antialiased i
+        -moz-osx-font-smoothing grayscale i
+
+    body
+        font-family font i
+
+    input
+    button
+    select
+    textarea
+        font-family font i
+
+    [data-night-mode] .burgundy-profile
+        color ui_user_red i
+
+    [data-night-mode] .orange-profile
+        color ui_user_orange i
+
+    [data-night-mode] .green-profile
+        color ui_user_green i
+
+    [data-night-mode] section.entry > article > header > div.right > div a.username
+        font-weight 600
+        font-size 14px i
+
+    [data-night-mode] .header
+        position sticky i
+        color bg_secondary i
+        height 60px i
+        box-shadow 0px 25px 20px -20px rgba(0, 0, 0, 0.5)
+
+    [data-night-mode] header.header > .left > a.logotype
+    [data-night-mode] header.header > .left > a.logo
+        background ui_primary i
+
+    [data-night-mode] header.header
+        position relative
+
+    [data-night-mode] header.header:after
+        content autor
+        position absolute
+        color ui_font_primary
+        top 44px
+        left 113px
+        font-size 8px
+        font-weight 500
+
+    [data-night-mode] header.header > .left > nav.main > ul li a + strong
+        background ui_primary i
+        box-shadow n i
+
+    [data-night-mode] header.header > .left > nav.main > ul li.active a
+        background t i
+        border-bottom 2px solid ui_primary
+        border-radius 0
+
+    [data-night-mode] header.header > .left > nav.main > ul li:hover a
+        background-color bg_hover i
+
+    [data-night-mode] header.header > .left > button
+        background bg_hover i
+
+    [data-night-mode] body > section.open-left-panel:not(.is-mobile) main.main
+        max-width calc(100% - 300px - 6px)
+
+    [data-night-mode] main.main[data-theme="default"] > section > .content
+        width calc(100% - 350px - 20px)
+
+    [data-night-mode] section.sidebar
+        width 350px i
+
+    [data-night-mode] main.main > section
+        margin 0 auto 0 auto i
+
+    [data-night-mode] section.sidebar > * + *
+        margin-top 0px i
+        margin-bottom 10px
+
+    [data-night-mode] aside.left-panel
+    [data-night-mode] section.sidebar
+    [data-night-mode] section.link-page
+    [data-night-mode] section.messages-page
+    [data-night-mode] section.bucket-create-page
+    [data-night-mode] section.bucket-page
+    [data-night-mode] section.search-page
+    [data-night-mode] section.article
+        margin-top 20px
+
+    [data-night-mode] main.main[data-theme="default"] > aside.wide-top
+        margin 20px auto 20px auto
+
+    [data-night-mode] header.stream-top
+        padding 20px 0 0 i
+
+    [data-night-mode] aside.left-panel > section.links > .content ul li.active a:before
+        background ui_white i
+
+    [data-night-mode] aside.left-panel > section.links > .content ul li.active a > span
+        background bg_hover i
+        font-weight 500 i
+        color ui_white i
+
+    [data-night-mode] aside.left-panel > section.links > .content ul li i
+        background ui_font_primary i
+
+    [data-night-mode] aside.left-panel > section.links > .content ul li:hover:not(.active) a > span
+        background bg_hover i
+
+    [data-night-mode] section.search-input form > label
+        background ui_font_primary i
+
+    [data-night-mode] section.search-input form > input[type="search"]
+        color ui_font_primary i
+        background bg_hover i
+        border 1px solid bg_hover i
+
+    [data-night-mode] section.search-input form > input[type="search"]::placeholder
+        color ui_font_primary i
+        font-size 13px
+        font-weight 600 i
+
+    [data-night-mode] section.bucket-editor .form-element input
+        background bg_hover i
+        border 1px solid bg_hover i
+
+    [data-night-mode] section.link-block.detailed:hover
+        -webkit-box-shadow 0 0 0 2px rgba(ui_primary, 0.4) i
+        box-shadow 0 0 0 2px rgba(ui_primary, 0.4) i
+
+    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn > button
+        background bg_hover i
+        color ui_font_primary i
+
+    [data-night-mode] aside.left-panel > section.links > .content ul li a:before
+        background ui_font_primary i
+
+    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn.icon > button:before
+        background ui_font_primary i
+
+    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn.icon > button:hover:before
+        background ui_font_primary i
+
+    [data-night-mode] aside.left-panel section.cta-bucket > .content section.add-to-bucket-btn > button:hover
+        background ui_primary i
+        color ui_font_primary i
+
+    [data-night-mode] aside.left-panel > section.buttons > .content ul li a:after
+        background ui_primary i
+
+    [data-night-mode] section.link:before
+    [data-night-mode] section.entry:before
+        background bg_hover i
+
+    [data-night-mode] section.vote-box .dig button
+    [data-night-mode] section.vote-box .dig p
+        background ui_primary i
+        font-weight 700
+
+    [data-night-mode] section.vote-box .dig p span
+        background bg_secondary i
+        color ui_font_primary i
+
+    [data-night-mode] section.vote-box .dig p + button
+        margin-top 10px
+
+    [data-night-mode] section.vote-box.hot .dig p:before
+        background ui_minus
+
+    [data-night-mode] span.adult-ribbon
+        font-size 11px i
+        font-weight 700 i
+        padding 0 4px i
+        border-radius 5px i
+
+    [data-night-mode] section.link-block > section > article > header h2 a:visited
+    [data-night-mode] section.link-block > section > article section.info > p a:visited
+        color ui_font_visited i
+
+    [data-night-mode] section.link-block > section > article > header h2
+        font-size 18px i
+        font-weight 600 i
+        color ui_font_primary i
+
+    [data-night-mode] section.link-block > section > article > header h2 a
+        color ui_font_primary i
+
+    [data-night-mode] section.link-block > section > article section.info > p
+        color ui_font_primary i
+
+    [data-night-mode] section.entry-content .wrapper blockquote
+        color ui_font_secondary i
+        background bg_primary i
+
+    [data-night-mode] section.entry.reply
+        border-left 2px solid bg_hover
+        border-radius 0
+        box-shadow n
+        background t
+
+    [data-night-mode] section.entry.reply:nth-child(odd)
+        background t i
+
+    [data-night-mode] section.entry.author
+    [data-night-mode] section.entry.author:nth-child(odd)
+        background t i
+        border-left 2px solid rgba(ui_primary, 0.3)
+
+    [data-night-mode] section.entry.link-author.own
+    [data-night-mode] section.entry.link-author.own:nth-child(odd)
+        border-left 2px solid rgba(ui_primary, 1)
+        background linear-gradient(90deg, rgba(ui_primary, 0.07) 0%, ui_gradient_2 30%) i
+        box-shadow 0px 10px 15px -8px rgba(0, 0, 0, 0.6) i
+
+    [data-night-mode] #link-comments-stream .content section.entry > article
+    [data-night-mode] #link-comments-stream .content section.entry #link-comments .entry
+    [data-night-mode] .content section.entry > article
+        padding-top 12px i
+        padding-bottom 12px i
+
+    [data-night-mode] #link-comments-stream section.stream > .content > * + *
+        margin-top 10px
+
+    [data-night-mode] section.entry-content .wrapper a
+        color ui_primary i
+        font-weight 400
+
+    [data-night-mode] section.entry > article:hover
+        background t i
+
+    [data-night-mode] section.rating-box .buttons button.plus
+    [data-night-mode] section.related-rating-box button.plus
+        border 2px solid ui_plus_border i
+
+    [data-night-mode] section.rating-box .buttons button.minus
+    [data-night-mode] section.related-rating-box button.minus
+        border 2px solid ui_minus_border i
+
+    [data-night-mode] section.related-rating-box button.minus.voted
+        background rgba(ui_minus, 0.4) i
+
+    [data-night-mode] section.rating-box .buttons button.plus:after
+    [data-night-mode] section.related-rating-box button.plus:after
+        background ui_plus i
+
+    [data-night-mode] section.rating-box .buttons button.minus:after
+    [data-night-mode] section.related-rating-box button.minus:after
+        background ui_minus i
+
+    [data-night-mode] section.rating-box .buttons button.plus.voted
+        background rgba(ui_plus, 0.4) i
+
+    [data-night-mode] section.rating-box > ul li
+    [data-night-mode] section.related-rating-box > ul li
+        color ui_minus i
+
+    [data-night-mode] section.rating-box > ul li.separated.zero
+        color ui_plus i
+
+    [data-night-mode] section.rating-box>ul li.zero:not(separated)
+        color ui_font_primary i
+
+    [data-night-mode] section.rating-box > ul li.minus
+        color ui_minus i
+
+    [data-night-mode] section.rating-box > ul li.plus
+    [data-night-mode] section.related-rating-box > ul li.plus
+        color ui_plus i
+
+    [data-night-mode] .v--modal-overlay
+        background rgba(0, 0, 0, 0.8)
+
+    [data-night-mode] section.rating-box > ul li + li
+    [data-night-mode] section.rating-box > ul + .buttons
+        margin-left 10px i
+
+    [data-night-mode] section.link-block > section > article section.info > span:after
+    [data-night-mode] header.static-top.article>div:after
+        display n i
+
+    [data-night-mode] section.entry-content .wrapper button
+        padding 5px 8px i
+
+    [data-night-mode] section.entry-content .wrapper button.more
+        display flex
+        margin 8px 0 0 i
+        font-size 12px i
+
+    [data-night-mode] section.entry-content .wrapper button
+        background t i
+        color ui_font_primary i
+        border-bottom 2px solid ui_primary
+        font-size 10px i
+        font-weight 700 i
+        border-radius 0
+        padding 4px 4px i
+
+    [data-night-mode] section.message > article.me > div.content
+        background bg_primary i
+        border 0px solid t i
+
+    [data-night-mode] section.message > article > div.content
+        background bg_hover
+
+    [data-night-mode] aside.hint-box
+        background #16393a i
+
+    [data-night-mode] aside.hint-box > header h3
+    [data-night-mode] aside.hint-box > .content p
+        color #1ee0ac i
+
+    [data-night-mode] div.button.inactive .target
+        background ui_primary
+
+    [data-night-mode] .v--modal-box
+    [data-night-mode] section.modal > footer
+        background bg_secondary i
+
+    [data-night-mode] .cool-lightbox
+        background-color rgba(30, 30, 30, 0.9) i
+
+    [data-night-mode] .cool-lightbox .cool-lightbox-toolbar
+        top 30px
+        right 20px
+
+    [data-night-mode] .cool-lightbox .cool-lightbox-toolbar .cool-lightbox-toolbar__btn > *
+        box-shadow 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22)
+
+    [data-night-mode] button.cool-lightbox-toolbar__btn > span
+        background ui_primary i
+
+    [data-night-mode] .cool-lightbox .cool-lightbox__slide img
+        box-shadow n i
+
+    [data-night-mode] input
+        font-family font i
+        color ui_font_primary i
+        background bg_hover i
+        border 1px solid #2a3037 i
+        height 45px i
+
+    [data-night-mode] section.entry.author:before
+    [data-night-mode] section.entry.link-author:before
+    [data-night-mode] section.entry.own:before
+        background t i
+        width 0
+        height 0
+
+    [data-night-mode] section.link > figure
+        width 50px
+        height 50px
+        flex 0 0 50px
+
+    [data-night-mode] section.entry-photo figure
+    [data-night-mode] section.entry-photo figure figcaption
+        border n i
+        background bg_hover i
+        padding 10px 10px 30px 10px
+        box-shadow none
+
+    [data-night-mode] div.button.outline .target
+        color ui_font_primary
+        border 0px solid t i
+        font-weight 700
+
+    [data-night-mode] div.button.outline .target:hover
+        background ui_primary i
+        color ui_white i
+        border n i
+
+    [data-night-mode] section.entry > .comments + section.editor
+        margin 30px 0 9px 9px
+
+    [data-night-mode] section.editor.inner
+        border n i
+        box-shadow n i
+        background bg_primary i
+
+    [data-night-mode] section.editor > .content textarea
+        background t i
+        color ui_font_primary
+        font-size 16px
+
+    [data-night-mode] section.editor:focus-within:not(.inner):not(.message)
+        border 1px solid bg_hover i
+        box-shadow n i
+
+    [data-night-mode] .switch input:checked + label strong i:nth-child(1)
+        background ui_primary i
+
+    [data-night-mode] li.account > a > a
+        border 2px solid ui_primary
+
+    [data-night-mode] header.header > .right > nav > ul > li.dropdown > a .svg-inline svg
+        fill ui_font_primary
+
+    [data-night-mode] li > section section.notifications.empty section.no-items
+    [data-night-mode] li > section section.stream > .content > section
+        background bg_secondary i
+        opacity 1 i
+
+    [data-night-mode] li.account > ul > li:hover a
+        background bg_hover i
+
+    [data-night-mode] aside.left-panel > section.buttons > .content ul li a:before
+        border 1px solid bg_hover
+
+    [data-night-mode] ul.tab-nav
+        padding 20px 2px 5px i
+
+    [data-night-mode] ul.tab-nav > li.active a
+        color ui_primary i
+
+    [data-night-mode] ul.tab-nav > li.active a:after
+        background ui_primary i
+
+    [data-night-mode] header.header > .right > nav > ul > li.dropdown > ul
+    [data-night-mode] header.header > .right > nav > ul > li.dropdown > section
+        background bg_secondary i
+
+    [data-night-mode] aside.profile-top > section > figure
+        background bg_secondary i
+
+    [data-night-mode] figure.badge-icon
+        background-color ui_primary i
+
+    [data-night-mode] article.link-article > footer:before
+        background-image n i
+
+    [data-night-mode] section.actions > ul > li.reply
+        font-weight 600
+
+    [data-night-mode] section.survey
+        border n i
+        background bg_primary i
+
+    [data-night-mode] section.survey > .content:before
+    [data-night-mode] section.survey > .content:after
+        background bg_hover i
+        height 0 i
+
+    [data-night-mode] section.survey > .content ul li.voted i
+        border 1px solid ui_primary i
+        background ui_primary i
+
+    [data-night-mode] section.survey > .content ul li i[data-v-a619d144]
+        border 1px solid bg_secondary i
+        background bg_secondary
+
+    [data-night-mode] div.button .target
+        color ui_font_primary
+        background bg_hover i
+
+    div.button .target:hover
+        background ui_primary i
+
+    [data-night-mode] strong.upcoming-count:before
+        display n
+
+    [data-night-mode] strong.upcoming-count:after
+        color bg_secondary
+        font-weight 600
+
+    [data-night-mode] section.new-entry[data-v-5c93cb4f] .button .target
+        box-shadow n i
+
+    [data-night-mode] section.survey > .content ul li:hover
+        border-color bg_hover i
+        border-radius 6px
+
+    [data-night-mode] section.survey > .content ul li i:before
+        width 15px
+        height 15px
+        border 2px solid ui_primary
+
+    [data-night-mode] section.survey > .content ul li i:after
+        left 15px
+        width 7px
+        height 7px
+        background ui_primary
+
+    [data-night-mode] section.entry-content .wrapper code
+        border n i
+        font-family font_code
+        font-weight 400 i
+        letter-spacing 0.4px i
+        display inline-block i
+        padding 6px 15px i
+        background bg_primary i
+        line-height 1.7 i
+
+    [data-night-mode] section.embed-ghost figure
+        height 240px
+
+    [data-night-mode] section.embed-ghost figure:after
+        background rgba(bg_primary, 0.5) i
+
+    [data-night-mode] section.embed-ghost figure .svg-inline svg
+    [data-night-mode] section.link-block>section>article figure.embed .svg-inline svg
+        fill ui_primary
+        filter n
+
+    [data-night-mode] section.entry-photo figure>span:before
+        border 2px solid t
+        background ui_primary
+        box-shadow n
+        opacity 0.9
+        color ui_font_primary
+
+    [data-night-mode] section.search-results-dropdown
+        background bg_secondary i
+        box-shadow 0 29px 52px rgba(0, 0, 0, 0.4), 0 25px 16px rgba(0, 0, 0, 0.2) i
+
+    [data-night-mode] section.search-results-dropdown section.stream > .content > section article header
+        background-color ui_primary i
+
+    [data-night-mode] section.search-results-dropdown section.stream > .content > section article header h3
+        color ui_white i
+
+    [data-night-mode] section.search-results-dropdown section.stream > .content > footer a:not(.active-select)
+        background-color bg_secondary i
 
     // Styl mobilny
-    [data-night-mode] nav.mobile-navbar > ul > li.active a > span:before, [data-night-mode] strong.upcoming-count.mobile {
-        background: ui_primary;
-    }
+    [data-night-mode] nav.mobile-navbar > ul > li.active a > span:before
+    [data-night-mode] strong.upcoming-count.mobile
+        background ui_primary
 
-    [data-night-mode] nav.mobile-navbar > ul > li a > span:after {
-        background: ui_font_secondary;
-    }
+    [data-night-mode] nav.mobile-navbar > ul > li a > span:after
+        background ui_font_secondary
 
-    [data-night-mode] nav.mobile-navbar > ul > li a {
-        color: ui_font_secondary;
-    }
+    [data-night-mode] nav.mobile-navbar > ul > li a
+        color ui_font_secondary
 
-    [data-night-mode] aside.left-panel, [data-night-mode] section.link-block, [data-night-mode] section.entry, [data-night-mode] .popper-button .floating-btn > li>span:hover {
-        box-shadow: n;
-        -webkit-box-shadow: n;
-    }
+    [data-night-mode] aside.left-panel
+    [data-night-mode] section.link-block
+    [data-night-mode] section.entry
+    [data-night-mode] .popper-button .floating-btn > li>span:hover
+        box-shadow n
+        -webkit-box-shadow n
 
-    aside.left-panel>section.links>.content ul li.bucket > .popper-button {
-        height: inherit i;
-        right: inherit i;
-        top: inherit i;
-    }
+    aside.left-panel>section.links>.content ul li.bucket > .popper-button
+        height inherit i
+        right inherit i
+        top inherit i
 
-    [data-night-mode] .popper-button .floating-btn {
-        background: t;
-        color: ui_font_primary;
-    }
+    [data-night-mode] .popper-button .floating-btn
+        background t
+        color ui_font_primary
 
-    [data-night-mode] .popper-button .floating-btn.open> li>span {
-        -webkit-box-shadow: n;
-        box-shadow: n;
-    }
+    [data-night-mode] .popper-button .floating-btn.open> li>span
+        -webkit-box-shadow n
+        box-shadow n
 
-    [data-night-mode] .popper-button .floating-btn > li>span {
-        width: 50px;
-        height: 50px;
-        background: bg_hover;
-        border-radius: 6px;
-    }
+    [data-night-mode] .popper-button .floating-btn > li>span
+        width 50px
+        height 50px
+        background bg_hover
+        border-radius 6px
 
-    [data-night-mode] .popper-button .floating-btn > li>ul>li {
-        border-radius: 6px;
-        background: bg_hover i;
-        border-bottom: 2px solid bg_hover;
-    }
+    [data-night-mode] .popper-button .floating-btn > li>ul>li
+        border-radius 6px
+        background bg_hover i
+        border-bottom 2px solid bg_hover
 
-    [data-night-mode] .popper-button .floating-btn > li>ul>li a {
-        color: ui_font_primary i;
-        width: 110px i;
-        text-align: center;
-        font-size: 14px;
-        font-weight: 600;
-    }
+    [data-night-mode] .popper-button .floating-btn > li>ul>li a
+        color ui_font_primary i
+        width 110px i
+        text-align center
+        font-size 14px
+        font-weight 600
 
-    [data-night-mode] .popper-button .floating-btn > li>span:after {
-        top: 17px;
-        left: 18px;
-    }
+    [data-night-mode] .popper-button .floating-btn > li>span:after
+        top 17px
+        left 18px
 
-    [data-night-mode] .popper-button button.target, [data-night-mode] .popper-button .floating-btn > li>span:before {
-        display: n;
-    }
+    [data-night-mode] .popper-button button.target
+    [data-night-mode] .popper-button .floating-btn > li>span:before
+        display n
 
-    @media (max-width: 1024px) {
-        main.main[data-theme='default'] > aside > .content, main.main[data-theme='default'] > section > .content, main.main[data-theme='one-column'] > aside > .content, main.main[data-theme='one-column'] > section > .content {
-            width: 100% i;
-        }
+    @media (max-width 1024px)
+        main.main[data-theme="default"] > aside > .content
+        main.main[data-theme="default"] > section > .content
+        main.main[data-theme="one-column"] > aside > .content
+        main.main[data-theme="one-column"] > section > .content
+            width 100% i
 
-        [data-night-mode] section.home-page section.link-block > section > article {
-            padding: 16px 8px 0 8px i;
-        }
+        [data-night-mode] section.home-page section.link-block > section > article
+            padding 16px 8px 0 8px i
 
-        [data-night-mode] section.home-page section.link-block > section > article figure {
-            right: auto;
-            left: auto i;
-        }
+        [data-night-mode] section.home-page section.link-block > section > article figure
+            right auto
+            left auto i
 
-        [data-night-mode] section.entry > .comments {
-            padding: 10px 0 0 30px;
-        }
-    }
-}
+        [data-night-mode] section.entry > .comments
+            padding 10px 0 0 30px
