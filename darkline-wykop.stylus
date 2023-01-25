@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           DarkLine - Wykop 2023
 @namespace      https://userstyles.world/user/vocus
-@version        2.1.2
+@version        2.1.4
 @description    Motyw DarkLine dla wykop.pl 2023
 @author         vocus
 @homepageURL    https://github.com/vocus07/DarkLine
@@ -186,7 +186,7 @@
 
   
 /*  #Dosiadlgo_To_Pedau
- *  Jeśli to oglądasza atencjuszko to wiec...
+ *  Jeśli to oglądasza atencjuszko to wiedz...
  *  że w tym momencie sram ci na twoja atencyjną mordę.
  */
   
@@ -958,4 +958,4 @@
 		[data-night-mode] section.entry > .comments
 			padding 10px 0 0 30px
    
-// #Dosiadlgo_To_Pedau   
+// #Dosiadlgo_To_Pedau
